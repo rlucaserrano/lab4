@@ -9,10 +9,10 @@ class Main                  // Main class for hex to dec conversion
         hexNumber = hexNumber.toUpperCase();        // changes letters to uppercase
         long totalDex = 0;
         for(int hexPlace = 0; hexPlace < hexNumber.length(); hexPlace++)    //for loop will start at 0 and run
-        {                                                                   // until the count of char position is
-            char hex = hexNumber.charAt(hexPlace);                          // less than the length of string
-            int decVal = hexString.indexOf(hex);
-            int powerCount = hexPlace + 1;
+        {                                                                   // until the count of char position is less than the length of string
+            char hex = hexNumber.charAt(hexPlace);       //this method will isolate character from position 0- final char in string                   
+            int decVal = hexString.indexOf(hex);        //this will assign decimal value of isolated hex char with position from hexString
+            int powerCount = hexPlace + 1;              
             int power = hexNumber.length()-powerCount;                      // assigns power by removing 1 from the position R to L to accomodate 0 start
             totalDex = (long)(Math.pow(16,power) * decVal)+ totalDex;       // sum using loop and each new char value
         }
